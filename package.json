@@ -1,0 +1,25 @@
+{
+  "name": "toshibot-machines",
+  "version": "0.1.0",
+  "description": "Microservice for managing machines",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Colm3na/toshibot-machines.git"
+  },
+  "keywords": [
+    "toshi",
+    "ethereum",
+    "vending",
+    "machine"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Colm3na/toshibot-machines/issues"
+  },
+  "homepage": "https://github.com/Colm3na/toshibot-machines#readme"
+}
