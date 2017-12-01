@@ -1,18 +1,15 @@
 // Importamos módulos.
 const http = require('http')
-// Función que se ejecuta cuando llegue la petición.
-const server = http.createServer()
-server.on('request', (request, response) => {
-  let body = ''
-  // Concatenamos mas datos de la misma petición.
-  request.on('data', data => {
-    body = body + data
-  })
-  // Evento que se ejecuta cuando se terminan de llegar los datos.
-  request.on('end', () => {
-    console.log(body)
-    response.end('Hola colmena')
-  })
+const express = require('express')
+const bodyParser = require('body-parser')
+// Inicializamos módulos.
+const app = express()
+const server = http.createServer(app)
+// Le decimos a express que use middleware (Funciones que se ejecutan de forma intermedia) bodyParser
+app.use(bodyParser.json())
+// Peticion del tipo GET al servidor
+app.get('/', (req, res) => res.end('No hago nada'))
+// Peticion del tipo POST al servidor
+app.post('/power', (req, res) => {
+  res.end({ resultado: req.body.numero * req.body.numero})
 })
-// El puerto donde está escuchando.
-server.listen(8080)
